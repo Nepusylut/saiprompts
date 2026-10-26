@@ -1,0 +1,99 @@
+---
+title: "Sample MDX Article: Advanced Prompt Engineering & Media Embeds"
+subtitle: "Demonstrates interactive prompt copy boxes, parameter badges, image showcases, and video embeds."
+category: "AI Prompts"
+tags: ["System Prompt", "Claude 3.7", "Midjourney v6.1", "Suno v4"]
+publishedAt: "2026-08-04"
+readTime: "5 min read"
+author:
+  name: "Elena Vance"
+  role: "Staff Engineer"
+  avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80"
+  handle: "@elena_arch"
+---
+
+import { PromptCard } from '../../components/PromptCard';
+import { VideoEmbed } from '../../components/VideoEmbed';
+
+# Advanced Prompt Engineering & Media Embeds
+
+Welcome to the sample MDX article for **PromptCraft Blog**. This document demonstrates how MDX components render seamlessly alongside markdown headers, code blocks, parameter sets, and responsive video embeds.
+
+---
+
+## 1. Interactive One-Click Copy Prompt Component (`<PromptCard />`)
+
+Below is an interactive `<PromptCard />` component displaying a target AI tool badge (`Claude`), parameter badges (`Model`, `Thinking Token Budget`), and a **Copy Prompt** button with native clipboard feedback.
+
+<PromptCard
+  prompt={{
+    id: "prompt-sample-mdx-claude",
+    title: "Principal Software Architect & Code Reviewer",
+    description: "Enforces SOLID principles, type safety, modular design, and security checks.",
+    tool: "Claude",
+    category: "Tech Prompts",
+    copyCount: 4218,
+    rating: 4.9,
+    parameters: [
+      { label: "Model", value: "Claude 3.7 Sonnet", badgeType: "model" },
+      { label: "Thinking", value: "Budget 4000 tokens", badgeType: "setting" },
+      { label: "Style", value: "Strict & Modular", badgeType: "param" }
+    ],
+    tags: ["Claude 3.7", "Architecture", "TypeScript"],
+    promptText: `[SYSTEM PROMPT: PRINCIPAL SOFTWARE ARCHITECT]
+
+Role: You are a Staff Level Software Architect specializing in TypeScript & React 19.
+
+Your directive:
+1. Analyze code strictly for maintainability, security vulnerabilities, edge-case race conditions, and performance bottlenecks.
+2. Enforce module separation: files must not exceed 250 lines; export typed modular contracts.
+3. Every suggestion must include a concise rationale and a direct concrete refactored code block.`
+  }}
+/>
+
+---
+
+## 2. Architectural Visualization Prompt (`Midjourney v6.1`)
+
+Prompt set for architectural visualization with image outcome preview:
+
+<PromptCard
+  prompt={{
+    id: "prompt-sample-mdx-mj",
+    title: "Minimalist Modernist Villa Architectural Photography",
+    description: "Ultra-crisp interior/exterior lighting and material accuracy.",
+    tool: "Midjourney",
+    category: "AI Prompts",
+    copyCount: 8932,
+    rating: 5.0,
+    parameters: [
+      { label: "Aspect Ratio", value: "--ar 16:9", badgeType: "param" },
+      { label: "Stylize", value: "--s 250", badgeType: "setting" },
+      { label: "Version", value: "--v 6.1", badgeType: "version" }
+    ],
+    tags: ["Midjourney v6.1", "Architecture", "Photorealism"],
+    promptText: "Architectural photography of a contemporary minimalist brutalist villa built into a Norwegian coastline cliffside, textured raw poured concrete and brushed dark cedar wood panels, floor-to-ceiling glass curtain wall, warm interior ambient tungsten glow, Hasselblad H6D-100c --ar 16:9 --v 6.1 --s 250 --style raw",
+    outputPreview: {
+      type: "image",
+      content: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      caption: "Render result generated via Midjourney v6.1"
+    }
+  }}
+/>
+
+---
+
+## 3. Responsive Video Embed Wrapper (`<VideoEmbed />`)
+
+Support for responsive video embeds (YouTube, Vimeo, MP4):
+
+<VideoEmbed
+  video={{
+    id: "vid-sample-mdx",
+    type: "youtube",
+    src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "System Instructions & Extended Thinking Video Walkthrough",
+    caption: "Video player with responsive 16:9 iframe scaling.",
+    aspectRatio: "16:9"
+  }}
+/>

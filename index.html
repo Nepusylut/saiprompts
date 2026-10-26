@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIPrompt - Developer Publication & AI Prompts Library</title>
+    <meta name="description" content="A modern developer publication & prompt library with AI Prompts and Technical Guides." />
+    <meta property="og:title" content="AIPrompt - Developer Publication & AI Prompts Library" />
+    <meta property="og:description" content="A modern developer publication & prompt library with AI Prompts and Technical Guides." />
+    <script>
+      (function() {
+        try {
+          var rawFetch = typeof window !== 'undefined' ? window.fetch : undefined;
+          var customFetch = rawFetch ? function() {
+            return rawFetch.apply(window, arguments);
+          } : undefined;
+
+          function defineFetchProperty(obj) {
+            if (!obj) return;
+            try {
+              Object.defineProperty(obj, 'fetch', {
+                get: function() {
+                  return customFetch;
+                },
+                set: function(val) {
+                  customFetch = val;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (err) {}
+          }
+
+          if (typeof window !== 'undefined') {
+            defineFetchProperty(window);
+          }
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            defineFetchProperty(Window.prototype);
+          }
+          if (typeof globalThis !== 'undefined' && globalThis !== window) {
+            defineFetchProperty(globalThis);
+          }
+        } catch (e) {
+          console.warn('Fetch setter initialization error:', e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "PromptCraft — Engineering-Grade Prompts & Tech Tips Blog",
+  description = "Production-tested prompt sets, system instructions, and technical tips for Claude 3.7, ChatGPT o3, Midjourney v6.1, and Cursor IDE."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-violet-600 selection:text-white antialiased">
+    <slot />
+  </body>
+</html>

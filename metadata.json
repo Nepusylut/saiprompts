@@ -1,0 +1,6 @@
+{
+  "name": "AIPrompt",
+  "description": "A modern developer publication & prompt library with AI Prompts and Technical Guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
